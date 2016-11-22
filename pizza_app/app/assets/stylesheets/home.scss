@@ -1,0 +1,45 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+ .navbar.transparent.navbar-inverse .navbar-inner {
+   background: rgba(0,0,0,0.4);
+}
+
+#bs-example-navbar-collapse-1 > ul > li > a{
+	padding-top: 25px;
+    padding-bottom: 25px;
+}
+.carousel {
+  max-height: 650px;
+  overflow: hidden;
+
+  .item img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+
+body > .container{
+	background-color: #F8F8F8;
+}
+
+.carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      
+      margin: auto;
+ }
+
+.footer {
+    position: absolute;
+    width: 100%;
+}
+
+.container .text-muted {
+    margin: 20px 0;
+}
+
+body > nav > div > div.navbar-header > a > img{
+	height:inherit;
+}
