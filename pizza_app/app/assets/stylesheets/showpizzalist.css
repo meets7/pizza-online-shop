@@ -1,0 +1,14 @@
+table th {
+   text-align: center;   
+}
+
+table tr:nth-of-type(even) {
+    background-color: #EFF8FF;
+}
+table tr:nth-of-type(odd) {
+	background-color:#ccddf2; 
+}
+
+table,tr{
+	border: 1px solid black;
+}

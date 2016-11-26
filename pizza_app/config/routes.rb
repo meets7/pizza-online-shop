@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
  
-  resources :pizzas
+  resources :pizzas do
+    collection do
+      delete 'destroy_multiple'
+      patch 'disable_multiple'
+    end
+  end
 
   get 'home/splashpage'
   get 'home/menu'

@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-	Create pizza accessible only to admin.
-
 	<div class="container">
 		<div class="row">
 			
-
 			<div class="col-md-6 center-block">
-				<%= form_for :item, url: pizzas_path do |f| %>
+				<%= form_for :item, url: pizza_path, method: :patch do |f| %>
 				<p>
 					<%= f.label :name %><br>
 					<%= f.text_field :name %>
@@ -39,7 +30,6 @@
 				</p>
 				<% end %>
 			</div>
+			
 		</div>
 	</div>
-</body>
-</html> 

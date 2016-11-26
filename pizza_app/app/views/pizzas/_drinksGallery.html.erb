@@ -1,14 +1,8 @@
 <div class="row drink-items">
-	<div class="col-md-4 drink">
-		<img src="/images/drinks/pepsi_soda_can.png" alt="sample-drink">
-		<span class="drink-title">Pepsi</span>
-	</div>
-	<div class="col-md-4 drink">
-		<p><i class="fa fa-pie-chart" aria-hidden="true"></i></p>
-		<span class="drink-title">Pizza 2</span>
-	</div>
-	<div class="col-md-4 drink">
-		<p><i class="fa fa-pie-chart" aria-hidden="true"></i></p>
-		<span class="drink-title">Pizza 3</span>
-	</div>
+
+	<%= div_for(@drinks, :class => "col-md-4 drink") do |item| %>
+		<img class="center-block" src="/images/drinks/pepsi_soda_can.png" alt="sample-drink">
+		<span class="drink-title text-center"><%= item.name %></span>
+		<span class="drink-info text-center"><%= item.description %></span>
+	<% end %>
 </div>

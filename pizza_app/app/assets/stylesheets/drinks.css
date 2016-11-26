@@ -21,6 +21,11 @@
 	margin-top : 10px;
 }
 
+.drink-info{
+	display: block;
+	margin-top : 7px;
+}
+
 .drink{
 	width: 50%; 
 	margin: 0 auto;

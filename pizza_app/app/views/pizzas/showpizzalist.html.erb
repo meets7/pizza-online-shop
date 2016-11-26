@@ -1,0 +1,38 @@
+<div class="row">
+	<div class="col-md-3"><h3>Listing Items</h3></div>
+
+	<div class="col-md-3 center-block">
+			<%= button_to "Delete multiple", destroy_multiple_pizzas_path, :id => "delete-multiple", :method => :delete %>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<table>
+			<tr>
+				<th class="col-xs-1"></th>
+				<div><th>Id</th></div>
+				<div><th>Name</th></div>
+				<div><th>Price</th></div>
+				<div><th>Desciption</th></div>
+				<div><th>Availability</th></div>
+			</tr>
+
+			<% @items.each do |item| %>
+			<tr>
+				<td><%= check_box_tag 'item_ids[]', item.id, false, :id => "item_#{item.id}" %></td>
+				<td><%= item.id %></td>
+				<td><%= item.name %></td>
+				<td><%= item.price %></td>
+				<td><%= item.description %></td>
+				<td><%= item.availability %></td>
+
+				<td><%= link_to 'Show', pizza_path(item) %></td>
+
+			</tr>
+			<% end %>
+
+		</table>
+	</div>
+
+</div>
