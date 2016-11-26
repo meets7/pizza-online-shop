@@ -1,0 +1,28 @@
+.menu-icon .fa{
+	color: black;
+	font-size:15em;
+}
+
+.menu-icon .fa:hover{
+	/*font-size: 8em;*/
+	transform: scale(1.25, 1.25);
+	color: red;
+	transition: 0.7s ease;
+	cursor: context-menu;
+}
+
+.menu-icons{
+	padding: 100px;
+	margin: 100px;
+}
+
+.menu-title{
+	font-family: fantasy;
+	display: block;
+	margin-top : 10px;
+}
+
+.menu-icon p, span{
+	text-align: center;
+}
+

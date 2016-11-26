@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'home/splashpage'
+  get 'home/menu'
 
   root 'home#splashpage'
   # The priority is based upon order of creation: first created -> highest priority.

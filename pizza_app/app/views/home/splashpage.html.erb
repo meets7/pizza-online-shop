@@ -8,6 +8,27 @@
 	<%= render :partial => "shared/header" %> 
 
 	<div class="container">
+
+		<div id="logindiv">
+		<span><i id="cancel" class="fa fa-window-close" aria-hidden="true"></i></span>
+			<form class="form" action="#" id="login">
+				<h3>Login Form</h3>
+				<hr/><br/>
+				<label>Username : </label>
+				<br/>
+				<input type="text" id="username" placeholder="Ex -john123"/><br/>
+				<br/>
+				<label>password : </label>
+				<br/>
+				<input type="text" id="password" placeholder="************"/><br/>
+				<br/>
+				<input type="button" id="loginbtn" value="Login"/>
+				<input type="button" id="cancel" value="Cancel"/>
+				<br/>
+			</form>
+		</div>
+
+
 		<div id="myCarousel" class="carousel slide">
 			<!-- Indicators -->
 			<ol class="carousel-indicators">
