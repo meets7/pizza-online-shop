@@ -1,0 +1,39 @@
+.pizza .fa{
+	color: black;
+	font-size:15em;
+}
+
+.pizza .fa:hover{
+	transform: scale(1.25, 1.25);
+	color: red;
+	transition: 0.7s ease;
+	cursor: context-menu;
+}
+
+.pizza-items{
+	padding: 100px;
+	margin: 100px;
+}
+
+.pizza-title{
+	font-family: fantasy;
+	display: block;
+	margin-top : 10px;
+}
+
+.pizza-info{
+	display: block;
+	margin-top : 7px;
+}
+
+.pizza{
+	width: 50%; 
+	margin: 0 auto;
+}
+
+
+.pizza img{
+	height: 200px;
+	width: 200px;
+}
+
