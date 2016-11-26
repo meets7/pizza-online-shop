@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+ 
+  resources :pizzas
+
   get 'home/splashpage'
   get 'home/menu'
 

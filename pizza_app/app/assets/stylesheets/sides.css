@@ -1,0 +1,34 @@
+.side .fa{
+	color: black;
+	font-size:15em;
+}
+
+.side .fa:hover{
+	transform: scale(1.25, 1.25);
+	color: red;
+	transition: 0.7s ease;
+	cursor: context-menu;
+}
+
+.side-items{
+	padding: 100px;
+	margin: 100px;
+}
+
+.side-title{
+	font-family: fantasy;
+	display: block;
+	margin-top : 10px;
+}
+
+.side{
+	width: 50%; 
+	margin: 0 auto;
+}
+
+
+.side img{
+	height: 240px;
+	width: 220px;
+}
+
