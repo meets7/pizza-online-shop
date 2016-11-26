@@ -26,7 +26,7 @@ DROP TABLE IF EXISTS `item`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `item` (
   `item_id` int(11) NOT NULL,
-  `item` varchar(45) NOT NULL,
+  `type` varchar(45) NOT NULL,
   `name` varchar(45) NOT NULL,
   `description` varchar(45) NOT NULL,
   `price` varchar(45) NOT NULL,
