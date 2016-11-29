@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161126212832) do
+ActiveRecord::Schema.define(version: 20161129052949) do
 
   create_table "customer", force: :cascade do |t|
     t.string   "name",                   limit: 45,               null: false
-    t.string   "address",                limit: 45,               null: false
+    t.string   "address",                limit: 200,              null: false
     t.integer  "phone",                  limit: 8,                null: false
     t.string   "email",                  limit: 255, default: "", null: false
     t.string   "encrypted_password",     limit: 255, default: "", null: false
@@ -39,6 +39,37 @@ ActiveRecord::Schema.define(version: 20161126212832) do
     t.string  "description",  limit: 500,                null: false
     t.integer "price",        limit: 4,                  null: false
     t.boolean "availability",             default: true, null: false
+  end
+
+  create_table "order", force: :cascade do |t|
+    t.integer  "item_id",     limit: 4,  null: false
+    t.string   "customer_id", limit: 45, null: false
+    t.string   "top1",        limit: 45, null: false
+    t.string   "top2",        limit: 45, null: false
+    t.string   "top3",        limit: 45, null: false
+    t.string   "show_flag",   limit: 45, null: false
+    t.datetime "date",                   null: false
+  end
+
+  add_index "order", ["customer_id"], name: "customer_id", using: :btree
+  add_index "order", ["customer_id"], name: "email_id2_idx", using: :btree
+  add_index "order", ["item_id"], name: "item_id1_idx", using: :btree
+
+  create_table "shopping_cart_items", force: :cascade do |t|
+    t.integer  "owner_id",       limit: 4
+    t.string   "owner_type",     limit: 255
+    t.integer  "quantity",       limit: 4
+    t.integer  "item_id",        limit: 4
+    t.string   "item_type",      limit: 255
+    t.integer  "price_cents",    limit: 4,   default: 0,     null: false
+    t.string   "price_currency", limit: 255, default: "USD", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "shopping_carts", force: :cascade do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
