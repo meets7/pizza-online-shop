@@ -1,10 +1,13 @@
 <div id="pizzaSection" class="row pizza-items">
-	
+	<h1>Pizzas</h4>
 	<%= div_for(@pizzas, :class => "col-md-4 pizza") do |item| %>
 		<img class="center-block" src="/images/sample-pizza.png" alt="sample-pizza">
 		<span class="pizza-title text-center"><%= item.name %></span>
+		<span class="hidden price"><%= item.price %></span>
+		<span class="hidden id"><%= item.id %></span>
 		<span class="pizza-info text-center"><%= item.description %></span>
+		<%= link_to new_order_path(:item_id => item.id, :cart_id => @cart.id) do %>
+				<button class="btn cd-add-to-cart center-block btn-default">Add</button>
+		<% end %>
 	<% end %>
-
-
 </div>

@@ -4,6 +4,12 @@ class PizzasController < ApplicationController
 		@drinks = []
 		@sides = []
 		@items = Item.all
+
+		if session.has_key?(:cart_id)
+			@cart = ShoppingCart.find(session[:cart_id])
+		else
+			@cart = ShoppingCart.create
+		end
 		for item in @items
 			if item.type == 'Pizza'
 				@pizzas.push item

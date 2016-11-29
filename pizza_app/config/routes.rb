@@ -1,12 +1,9 @@
 Rails.application.routes.draw do
  
   devise_for :customers
-  resources :pizzas do
-    collection do
-      delete 'destroy_multiple'
-      patch 'disable_multiple'
-    end
-  end
+  resources :pizzas 
+
+  resources :orders
 
   resource :customer
 
