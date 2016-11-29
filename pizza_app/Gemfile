@@ -32,6 +32,12 @@ gem 'autoprefixer-rails'
 #font-awesome
 gem 'font-awesome-rails'
 
+#Device authentication
+gem 'devise'
+
+##Ecommerce gem
+gem 'acts_as_shopping_cart', '~> 0.4.0'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

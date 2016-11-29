@@ -1,16 +1,60 @@
 <nav class="navbar navbar-default navbar-fixed-top" id="navbar-bootstrapoverrides">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#"><img alt="Brand" src="/images/pizza-brand-logo.jpg"></a>
+				<%= link_to home_splashpage_path do %>
+				<span class="navbar-brand"><img alt="Brand" src="/images/pizza-brand-logo.jpg"></span>
+				<span id="shop-title">La Pizzaria</span>
+				<% end %>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
+			
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav navbar-right">
-					<li ><a id="signin" href="#">Sign In</a></li>
-					<li ><a id="signup" href="#">Sign Up</a></li>
-				</ul>
+				<div class="nav navbar-nav navbar-right">
+					
+					<%- if customer_signed_in? %>
+						
+							<%= link_to home_menu_path do %>
 
+								<button class="btn btn-default" type="button">
+									 Menu
+								</button>
+						<% end %>
+						<span class="dropdown">
+
+						  <button class="btn btn-default dropdown-toggle" type="button" id="accountMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						     <span id="user-img"><i class="fa fa-user-circle" aria-hidden="true"></i></span>
+						     Account
+						    <span class="caret"></span>
+						  </button>
+						  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+						    <li><a href="#">Orders</a></li>
+						    <li>
+						    	<%= link_to 'Account Details', edit_customer_registration_path%>
+						    </li>
+						    <li role="separator" class="divider"></li>
+						    <li>
+						    <li>
+						    	<%= link_to 'Sign out', destroy_customer_session_path, :method => :delete%>
+						    </li>
+
+						  </ul>
+						</span>
+
+					
+
+					<% else %>
+						<%= link_to new_customer_session_path do %>
+						<span id="signin">Sign In</span>
+						<% end %>
+						<%= link_to new_customer_registration_path do %>
+						<span id="signup">Sign Up</span>
+						<% end %>
+					<% end %>
+
+					
+				</div>	
 			</div>
+			
 		</div>
 	</nav>
