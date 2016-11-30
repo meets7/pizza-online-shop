@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   devise_for :customers
   resources :pizzas 
 
+  get 'orders/checkout', to: 'orders#checkout'
   resources :orders
-
+  
   resource :customer
 
   get 'home/splashpage'

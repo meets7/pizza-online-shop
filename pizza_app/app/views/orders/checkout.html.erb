@@ -1,0 +1,31 @@
+<%= render :partial => "shared/header" %> 
+
+
+
+<div class="container">
+  <div class="row col-md-12">
+    <div class="center-block jumbotron"> 
+      <h2 class="text-center order-review">Review Order</h2>
+      <%= div_for(@checkoutitems, :class => "col-md-8") do |item| %>
+        
+        <span class="price text-center">
+          <span class="pizza-title text-center"><%= item.name %></span>
+          $<%= item.price %>
+        </span>
+        <div class="col-md-4">
+        <img class="checkoutitem-img center-block" src="/images/sample-pizza.png" alt="sample-pizza">
+      </div>
+      <% end %>
+      
+      <%= link_to orders_path, :method => "post" do %>
+      <button class="btn center-block btn-default">Place Order</button>
+      <% end %>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<%= render :partial => "shared/footer" %> 
