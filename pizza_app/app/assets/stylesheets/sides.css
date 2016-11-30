@@ -15,6 +15,11 @@
 	margin: 100px;
 }
 
+.side-info{
+	display: block;
+	margin-top : 7px;
+}
+
 .side-title{
 	font-family: fantasy;
 	display: block;

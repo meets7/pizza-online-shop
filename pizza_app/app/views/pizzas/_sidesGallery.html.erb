@@ -1,9 +1,23 @@
 <div id="sidesSection" class="row side-items">
-	
+	<h1>Sides</h4>
 	<%= div_for(@sides, :class => "col-md-4 side") do |item| %>
 		<img class="center-block" src="/images/sides-fries.png" alt="sample-side">
 		<span class="side-title text-center"><%= item.name %></span>
 		<span class="side-info text-center"><%= item.description %></span>
+		<span class="hidden price"><%= item.price %></span>
+		<span class="hidden id"><%= item.id %></span>
+		<%= link_to new_order_path(:item_id => item.id, :cart_id => @cart.id) do %>
+				<button class="btn cd-add-to-cart center-block btn-default">Add</button>
+		<% end %>
 	<% end %>
-
 </div>
+
+
+	
+	
+		
+		
+		
+		
+		
+		

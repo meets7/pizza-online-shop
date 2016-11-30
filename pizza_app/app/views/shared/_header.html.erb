@@ -16,19 +16,26 @@
 						
 							<%= link_to home_menu_path do %>
 
-								<button class="btn btn-default" type="button">
+								<button class="btn btn-default accountMenu" type="button" aria-expanded="true">
+								<span class="header-img">
+									<i class="fa fa-map-o" aria-hidden="true"></i>
+								</span>
 									 Menu
 								</button>
 						<% end %>
 						<span class="dropdown">
 
-						  <button class="btn btn-default dropdown-toggle" type="button" id="accountMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-						     <span id="user-img"><i class="fa fa-user-circle" aria-hidden="true"></i></span>
+						  <button class="btn btn-default dropdown-toggle accountMenu" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						     <span class="header-img">
+						     	<i class="fa fa-user-circle" aria-hidden="true"></i>
+						     </span>
 						     Account
 						    <span class="caret"></span>
 						  </button>
 						  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-						    <li><a href="#">Orders</a></li>
+						    <li>
+						    	<%= link_to 'Orders', orders_path %>
+						    </li>
 						    <li>
 						    	<%= link_to 'Account Details', edit_customer_registration_path%>
 						    </li>

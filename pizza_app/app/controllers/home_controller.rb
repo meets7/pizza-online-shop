@@ -6,8 +6,10 @@ class HomeController < ApplicationController
   end
 
   def menu
-  	@cart = ShoppingCart.create
-  	session[:cart_id] = @cart.id
+  	if !session.has_key?("cart_id") 
+  		@cart = ShoppingCart.create
+  		session[:cart_id] = @cart.id
+  	end
   	render
   end
 end

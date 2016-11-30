@@ -1,8 +1,21 @@
 <div id="drinksSection" class="row drink-items">
-
+	<h1>Drinks</h4>
 	<%= div_for(@drinks, :class => "col-md-4 drink") do |item| %>
 		<img class="center-block" src="/images/drinks/pepsi_soda_can.png" alt="sample-drink">
 		<span class="drink-title text-center"><%= item.name %></span>
+		<span class="hidden price"><%= item.price %></span>
+		<span class="hidden id"><%= item.id %></span>
 		<span class="drink-info text-center"><%= item.description %></span>
+		<%= link_to new_order_path(:item_id => item.id, :cart_id => @cart.id) do %>
+				<button class="btn cd-add-to-cart center-block btn-default">Add</button>
+		<% end %>
 	<% end %>
 </div>
+
+
+		
+		
+		
+		
+		
+		

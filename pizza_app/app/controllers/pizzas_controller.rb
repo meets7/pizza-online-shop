@@ -68,12 +68,14 @@ class PizzasController < ApplicationController
 		render 'showpizzalist'
 	end
 
-	def destroy_multiple
-		render plain: params[:item_ids].inspect
-	end
+	
 
 	private 
 	def item_params
 		params.require(:item).permit(:name, :type, :description, :price, :availability)
+	end
+
+	def destroy_multiple
+		render plain: params[:item_ids].inspect
 	end
 end

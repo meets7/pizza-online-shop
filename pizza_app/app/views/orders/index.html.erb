@@ -1,0 +1,31 @@
+<%= render :partial => "shared/header" %> 
+
+
+<div class="container vertical-center">
+  <div class="row">
+    <table>
+      <tr>
+        <th class="col-xs-1"></th>
+        <div><th>Order id</th></div>
+        <div><th>Date</th></div>
+        <div><th>Price</th></div>
+        <div><th>Desciption</th></div>
+      </tr>
+
+      <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.id %></td>
+        <td><%= order.date %></td>
+
+      </tr>
+      <% end %>
+
+    </table>
+    <%= link_to 'Back', :back %>
+  </div>
+
+</div>
+
+
+
+<%= render :partial => "shared/footer" %> 
