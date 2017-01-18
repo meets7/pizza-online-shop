@@ -12,16 +12,22 @@
 	<div class="container">
 		<div class="row menu-icons">
 			<div class="col-md-4 menu-icon">
+				<%= link_to pizzas_path :anchor => "pizzaSection" do %>
 				<p><i class="fa fa-pie-chart" aria-hidden="true"></i></p>
 				<span class="menu-title">Pizzas</span>
+				<% end %>
 			</div>
 			<div class="col-md-4 menu-icon">
+			<%= link_to pizzas_path :anchor => "sidesSection" do %>
 				<p><i class="fa fa-cutlery" aria-hidden="true"></i></p>
 				<span class="menu-title">Sides</span>
+				<% end %>
 			</div>
 			<div class="col-md-4 menu-icon">
+			<%= link_to pizzas_path :anchor => "drinksSection" do %>
 				<p><i class="fa fa-glass" aria-hidden="true"></i></p>
 				<span class="menu-title">Drinks</span>
+				<% end %>
 			</div>
 		</div>
 	</div>

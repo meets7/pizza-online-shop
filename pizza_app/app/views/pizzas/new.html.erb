@@ -1,1 +1,45 @@
-Create pizza accessible only to admin.
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	Create pizza accessible only to admin.
+
+	<div class="container">
+		<div class="row">
+			
+
+			<div class="col-md-6 center-block">
+				<%= form_for :item, url: pizzas_path do |f| %>
+				<p>
+					<%= f.label :name %><br>
+					<%= f.text_field :name %>
+				</p>
+
+				<p>
+					<%= f.label :description %><br>
+					<%= f.text_area :description %>
+				</p>
+
+				<p>
+					<%= f.label :price %><br>
+					<%= f.number_field :price, :step => 0.1 %>
+				</p>
+
+
+
+				<p>
+					<%= f.label :type %><br>
+					<%= f.select :type, %w[Pizza Side Drink] %>
+				</p>
+
+				<p>
+					<%= f.submit %>
+				</p>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</body>
+</html> 

@@ -1,0 +1,38 @@
+<%= render :partial => "shared/header" %> 
+
+<div class="container">
+	<div class="row orders-table">
+		<div class="col-md-3"><h3>Listing Items</h3></div>
+		<table >
+			<tr>
+				<div><th class="col-xs-1">Id</th></div>
+				<div><th class="col-xs-2">Name</th></div>
+				<div><th class="col-xs-1">Price</th></div>
+				<div><th class="col-xs-5">Desciption</th></div>
+				<div><th class="col-xs-1">Availability</th></div>
+				<div><th class="col-xs-2">Actions</th></div>
+			</tr>
+
+			<% @items.each do |item| %>
+			<tr>
+				<td><%= item.id %></td>
+				<td><%= item.name %></td>
+				<td><%= item.price %></td>
+				<td><%= item.description %></td>
+				<td><%= item.availability %></td>
+
+				<td>
+					<%= link_to 'Show', pizza_path(item) %> |
+					<%= link_to 'Delete', pizza_path(item), :method => "delete" %>
+					
+				</td>
+
+			</tr>
+			<% end %>
+
+		</table>
+	</div>
+
+</div>
+
+<%= render :partial => "shared/footer" %> 

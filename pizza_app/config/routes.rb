@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
  
-  resources :pizzas
+  devise_for :customers
+
+  get 'pizzas/showpizzalist', to: 'pizzas#showpizzalist'
+  resources :pizzas 
+
+  get 'orders/checkout', to: 'orders#checkout'
+  resources :orders
+  
+  resource :customer
 
   get 'home/splashpage'
   get 'home/menu'

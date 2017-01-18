@@ -1,0 +1,54 @@
+<%= render :partial => "shared/header" %> 
+
+
+
+<div class="container">
+  <div class="row col-md-12">
+    <div class="center-block vertical-center jumbotron"> 
+      <h2 class="text-center order-review">Review Order</h2>
+      <table >
+      <tr>
+        
+        <div><th class="col-xs-2">Name</th></div>
+        <div><th class="col-xs-1">Price</th></div>
+        <div><th class="col-xs-5">Desciption</th></div>
+
+      </tr>
+      <%= div_for(@checkoutitems, :class => "row col-md-8") do |item| %>
+        <tr>
+        <td><span class="price text-center">
+          <span class="pizza-title text-center"><%= item.name %></span>
+          </td>
+          <td>
+          <span>$<%= item.price %>
+        </span>
+        </td>
+        <hr>
+        <td>
+        <span><%= item.description %></span>
+        </td>
+        <td>
+        <div class="col-md-4">
+        <img class="checkoutitem-img center-block" src="/images/sample-pizza.png" alt="sample-pizza">
+      </div>
+      </td>
+      </tr>
+      <% end %>
+      
+      <div class="complete-order center-block">
+        <span id="totalPrice" class="text-center">Total price : </span>
+        <hr>
+        <span> $<%= @totalPrice %></span>
+        <hr>
+        <%= link_to orders_path, :method => "post" do %>
+        <button class="btn text-center center-block btn-default">Place Order</button>
+        </tr>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+

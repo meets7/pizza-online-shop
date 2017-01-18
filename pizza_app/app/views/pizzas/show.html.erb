@@ -1,0 +1,14 @@
+
+<p>Id : <%= @item.id %></p>
+	<p>Name :  <%= @item.name %></p>
+	<p>Price :<%= @item.price %></p>
+	<p>Desciption: <%= @item.description %></p>
+	<p>Availability: <%= @item.availability %></p>
+	<p>
+		<%= link_to 'Edit', edit_pizza_path(@item) %> | 
+		<%= link_to @availabilityText, pizza_path( :item => {:availability => @makeAvailability}), :method => :put%> |
+		<%= link_to 'Delete', pizza_path(@item), :method => :delete %> 
+	</p>
+	<%= link_to 'Show All Items', pizza_path(:item => {:id => :'showpizzalist'}) %>
+</body>
+</html>

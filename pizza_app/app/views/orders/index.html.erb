@@ -1,0 +1,37 @@
+<%= render :partial => "shared/header" %> 
+
+
+<div class="container ">
+  <div class="row" class="orders-table">
+    <h3>Order History</h3>
+    <div><%= link_to 'Back', :back %></div>
+    <table id="">
+      <tr>
+        <div><th class="col-xs-1">Order id</th></div>
+        <div><th class="col-xs-1">Date</th></div>
+        <div ><th class="col-xs-1">Price</th></div>
+        <div><th class="col-xs-1">Desciption</th></div>
+      </tr>
+
+      <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.id %></td>
+        <td>
+          <%= ActiveSupport::TimeZone["Central Time (US & Canada)"].parse(order.date.to_s).utc.to_date.strftime(" %b %e, %l:%M %p ")[1..-1]%>
+          
+        </td>
+        <td><%= order.price %></td>
+        <td>Not available</td>
+
+      </tr>
+      <% end %>
+
+    </table>
+
+  </div>
+
+</div>
+
+
+
+<%= render :partial => "shared/footer" %> 
