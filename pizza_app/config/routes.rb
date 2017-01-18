@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
  
   devise_for :customers
+
+  get 'pizzas/showpizzalist', to: 'pizzas#showpizzalist'
   resources :pizzas 
 
   get 'orders/checkout', to: 'orders#checkout'

@@ -1,7 +1,7 @@
 <%= render :partial => "shared/header" %> 
 
-<div class="container">
-  <div class="row col-md-12">
+<div class="container vertical-center">
+  <div class="row col-md-12 vertical-center">
     <div id="login-form" class="center-block jumbotron vertical-center">
       <h3>Login</h3>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -16,7 +16,9 @@
       </div>
 
       <div class="actions">
-        <%= f.submit "Log in", :class => "btn btn-default text-center col-md-1" %>
+        <%= f.submit "Log in", :class => "btn btn-default text-center"%>
+      </div>
+      <div class="actions text-center">
         <%= link_to home_splashpage_path, :class => "btn btn-default text-center" do %>
         <span id="Cancel">Cancel</span>
         <% end %>

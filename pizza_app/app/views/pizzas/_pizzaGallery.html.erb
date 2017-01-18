@@ -6,8 +6,8 @@
 		<span class="hidden price"><%= item.price %></span>
 		<span class="hidden id"><%= item.id %></span>
 		<span class="pizza-info text-center"><%= item.description %></span>
-		<%= link_to new_order_path(:item_id => item.id, :cart_id => @cart.id) do %>
-				<button class="btn cd-add-to-cart center-block btn-default">Add</button>
-		<% end %>
+		<button class="btn cd-add-to-cart center-block btn-default">Add</button>
+				
+		
 	<% end %>
 </div>

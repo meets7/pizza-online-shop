@@ -9,9 +9,12 @@ class PizzasController < ApplicationController
 			@cart = ShoppingCart.find(session[:cart_id])
 		else
 			@cart = ShoppingCart.create
+			session[:cart_id] = @cart.id
 		end
 		for item in @items
-			if item.type == 'Pizza'
+			if item.availability == false
+				next
+			elsif item.type == 'Pizza'
 				@pizzas.push item
 			elsif item.type == 'Drink'
 				@drinks.push item
@@ -66,6 +69,10 @@ class PizzasController < ApplicationController
 		@item.destroy
 		@items = Item.all
 		render 'showpizzalist'
+	end
+
+	def showpizzalist
+		@items = Item.all
 	end
 
 	

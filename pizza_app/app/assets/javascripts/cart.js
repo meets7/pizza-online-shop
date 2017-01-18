@@ -17,7 +17,7 @@ jQuery(document).ready(function($){
 
 		//add product to cart
 		addToCartBtn.on('click', function(event){
-			event.preventDefault();
+			/*event.preventDefault();*/
 			addToCart($(this));
 		});
 
@@ -91,10 +91,23 @@ jQuery(document).ready(function($){
 		//this is just a product placeholder
 		//you should insert an item with the selected product info
 		//replace productId, productName, price and url with your real product info
-		productId = productId + 1;
-		productName = $(document.activeElement).parent().siblings('.pizza-title').text();
-		price = $(document.activeElement).parent().siblings('.price').text();
-		id = $(document.activeElement).parent().siblings('.id').text();
+		productName = $(document.activeElement).parent().children('.pizza-title').text();
+		price = $(document.activeElement).parent().children('.price').text();
+		id = $(document.activeElement).parent().children('.id').text();
+
+		$.ajax({
+		                type: "GET",
+		                /*contentType: "application/json; charset=utf-8",*/
+		                url: "/orders/new?item_id=" + id,
+		                //data: "{'data1':'" + value1+ "', 'data2':'" + value2+ "', 'data3':'" + value3+ "'}",
+		                /*success: function (result) {
+		                //do somthing here
+		                },
+		                error: function (){
+		                    window.alert("something wrong!");
+		                }*/
+		            });
+
 		var productAdded = $('<li class="product"><div class="product-details"><h3>'+ productName + '</h3><span class="price">$' + price +'</span><div class="actions"><a href="#0" class="delete-item">Delete</a><div class="quantity"><label for="cd-product-'+ productId +'">Qty</label><span class="select"><select id="cd-product-'+ productId +'" name="quantity"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option></select></span></div></div></div></li>');
 		cartList.prepend(productAdded);
 	}

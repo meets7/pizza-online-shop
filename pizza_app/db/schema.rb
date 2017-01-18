@@ -11,22 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161129052949) do
+ActiveRecord::Schema.define(version: 20161130064627) do
 
   create_table "customer", force: :cascade do |t|
-    t.string   "name",                   limit: 45,               null: false
-    t.string   "address",                limit: 200,              null: false
-    t.integer  "phone",                  limit: 8,                null: false
-    t.string   "email",                  limit: 255, default: "", null: false
-    t.string   "encrypted_password",     limit: 255, default: "", null: false
+    t.string   "name",                   limit: 45,                  null: false
+    t.string   "address",                limit: 200,                 null: false
+    t.integer  "phone",                  limit: 8,                   null: false
+    t.string   "email",                  limit: 255, default: "",    null: false
+    t.string   "encrypted_password",     limit: 255, default: "",    null: false
     t.string   "reset_password_token",   limit: 255
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          limit: 4,   default: 0,  null: false
+    t.integer  "sign_in_count",          limit: 4,   default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip",     limit: 255
     t.string   "last_sign_in_ip",        limit: 255
+    t.boolean  "admin",                              default: false
   end
 
   add_index "customer", ["email"], name: "index_customer_on_email", unique: true, using: :btree
@@ -43,7 +44,7 @@ ActiveRecord::Schema.define(version: 20161129052949) do
 
   create_table "order", force: :cascade do |t|
     t.string   "customer_id", limit: 45, null: false
-    t.string   "show_flag",   limit: 45, null: false
+    t.string   "price",       limit: 11
     t.datetime "date",                   null: false
   end
 
